@@ -8,11 +8,6 @@
   </head>
   <body>
     <div class="container">
-      <nav>
-        <a href="/plants" class="nav-link">Browse Plants</a>
-        <a href="/plants/new" class="nav-link">Add New Plant</a>
-      </nav>
-
       <h1>All Plants</h1>
 
       <ul class="plant-list">
@@ -23,12 +18,17 @@
               src="<%= plant.image %>"
               alt="<%= plant.name %>"
               class="thumbnail"
+              onerror='this.src="/assets/placeholder.svg"'
             />
             <p class="plant-name"><%= plant.name %></p>
           </a>
         </li>
         <% }); %>
       </ul>
+      <nav>
+        <a href="/" class="back-link">← Go Back</a>
+        <a href="/plants/new" class="nav-link">Add New Plant</a>
+      </nav>
     </div>
   </body>
 </html>
