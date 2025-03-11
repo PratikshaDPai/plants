@@ -6,18 +6,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= plant.name %></title>
-    <!-- Dynamic title based on plant name -->
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <h1><%= plant.name %></h1>
-    <img src="<%= plant.image %>" />
-    <form action="/plants/<%=plant._id%>?_method=DELETE" method="POST">
-      <button type="submit">Delete <%= plant.name %></button>
-    </form>
-    <form action="/plants/<%=plant._id%>/edit" method="GET">
-      <button type="submit">Edit <%= plant.name %></button>
-    </form>
+    <div class="container">
+      <h1 class="plant-title"><%= plant.name %></h1>
 
-    <a href="/plants">Back to Plants</a>
+      <img
+        src="<%= plant.image %>"
+        alt="<%= plant.name %>"
+        class="plant-image"
+      />
+
+      <div class="button-group">
+        <form action="/plants/<%=plant._id%>?_method=DELETE" method="POST">
+          <button type="submit" class="delete-button">
+            Delete <%= plant.name %>
+          </button>
+        </form>
+        <form action="/plants/<%=plant._id%>/edit" method="GET">
+          <button type="submit" class="edit-button">
+            Edit <%= plant.name %>
+          </button>
+        </form>
+      </div>
+
+      <a href="/plants" class="back-link">← Back to Plants</a>
+    </div>
   </body>
 </html>

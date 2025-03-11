@@ -4,21 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create a Plant</title>
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <h1>Create a New Plant!</h1>
-    <form action="/plants" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" />
+    <div class="container">
+      <h1>Create a New Plant!</h1>
 
-      <label for="description">Description:</label>
-      <input type="text" name="description" id="description" />
+      <form action="/plants" method="POST" class="create-form">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required />
 
-      <label for="image">Image URL:</label>
-      <input type="text" name="image" id="image" />
+        <label for="description">Description:</label>
+        <textarea
+          name="description"
+          id="description"
+          rows="3"
+          required
+        ></textarea>
 
-      <button type="submit">Add Plant</button>
-    </form>
-    <a href="/plants/">Back to Plants</a>
+        <label for="image">Image URL:</label>
+        <input type="text" name="image" id="image" required />
+
+        <button type="submit" class="add-button">Add Plant</button>
+      </form>
+
+      <a href="/plants/" class="back-link">← Back to Plants</a>
+    </div>
   </body>
 </html>

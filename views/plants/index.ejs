@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <a href="/plants">Browse Plants</a>
-    <a href="/plants/new">Add New Plant</a>
-    <h1>All Plants</h1>
-    <ul>
-      <% plants.forEach(plant => { %>
-      <li>
-        <a href="/plants/<%= plant._id %>"><%= plant.name %></a>
-        <img src="<%= plant.image %>" class="thumbnail" />
-      </li>
-      <% }); %>
-    </ul>
+    <div class="container">
+      <nav>
+        <a href="/plants" class="nav-link">Browse Plants</a>
+        <a href="/plants/new" class="nav-link">Add New Plant</a>
+      </nav>
+
+      <h1>All Plants</h1>
+
+      <ul class="plant-list">
+        <% plants.forEach(plant => { %>
+        <li class="plant-card">
+          <a href="/plants/<%= plant._id %>">
+            <img
+              src="<%= plant.image %>"
+              alt="<%= plant.name %>"
+              class="thumbnail"
+            />
+            <p class="plant-name"><%= plant.name %></p>
+          </a>
+        </li>
+        <% }); %>
+      </ul>
+    </div>
   </body>
 </html>
