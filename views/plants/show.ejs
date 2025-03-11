@@ -20,6 +20,8 @@
         alt="<%= plant.name %> image"
       />
 
+      <p class="plant-description"><%= plant.description %></p>
+
       <div class="button-group">
         <form action="/plants/<%=plant._id%>?_method=DELETE" method="POST">
           <button type="submit" class="delete-button">

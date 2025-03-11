@@ -69,6 +69,13 @@ nav {
   justify-content: center;
 }
 
+.plant-description {
+  font-size: 1.2rem;
+  color: #4f6f4f;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
 .plant-card {
   background: antiquewhite;
   border-radius: 8px;
