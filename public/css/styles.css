@@ -241,3 +241,9 @@ textarea {
   background-color: #c2c96e;
   transform: scale(1.05);
 }
+
+.logo {
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 20%;
+}
