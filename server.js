@@ -32,9 +32,20 @@ app.get("/plants/new", (req, res) => {
   res.render("plants/new.ejs");
 });
 
+app.get("/plants/edit/:plantId", async (req, res) => {
+  const foundPlant = await Plant.findById(req.params.plantId);
+  res.render("plants/edit.ejs", { plant: foundPlant });
+});
+
 app.get("/plants/:plantId", async (req, res) => {
   const foundPlant = await Plant.findById(req.params.plantId);
   res.render("plants/show.ejs", { plant: foundPlant });
+});
+
+app.put("/plants/:plantId", async (req, res) => {
+  console.log(req.params.plantId, req.body);
+  await Plant.findByIdAndUpdate(req.params.plantId, req.body);
+  res.redirect(`/plants/${req.params.plantId}`);
 });
 
 app.delete("/plants/:plantId", async (req, res) => {
