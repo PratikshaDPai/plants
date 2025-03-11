@@ -32,7 +32,7 @@ app.get("/plants/new", (req, res) => {
   res.render("plants/new.ejs");
 });
 
-app.get("/plants/edit/:plantId", async (req, res) => {
+app.get("/plants/:plantId/edit", async (req, res) => {
   const foundPlant = await Plant.findById(req.params.plantId);
   res.render("plants/edit.ejs", { plant: foundPlant });
 });
