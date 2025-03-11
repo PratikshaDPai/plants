@@ -203,3 +203,21 @@ textarea {
   background-color: #c2c96e;
   transform: scale(1.05);
 }
+
+/* Add Plant Button */
+.add-button {
+  background-color: #d3db88;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #6c886c;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #c2c96e;
+  transform: scale(1.05);
+}
