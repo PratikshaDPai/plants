@@ -14,6 +14,8 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+const PORT = process.env.PORT || 8000;
+
 const Plant = require("./models/plant.js");
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
@@ -60,6 +62,6 @@ app.post("/plants", async (req, res) => {
   res.redirect("/plants");
 });
 
-app.listen(8000, () => {
-  console.log("Listening on port 8000");
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
 });
